@@ -19,4 +19,6 @@ public class Student {
 
     String name;
 
+    @OneToMany(mappedBy = "student")
+    Set<StudentCourse> studentsCourses = new HashSet<StudentCourse>();
 }
