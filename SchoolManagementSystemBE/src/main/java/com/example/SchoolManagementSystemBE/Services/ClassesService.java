@@ -12,17 +12,15 @@ public class ClassesService {
     @Autowired
     ClassesRepository classesRepository;
 
-    public List<Cls> getAll(){
-        return classesRepository.findAll();
-    }
+    public List<Cls> getAll(){return classesRepository.findAll();}
     public Cls getById(Integer id){return classesRepository.findById(id).get();}
 
-    public Cls addClass(Cls cls){
+    public Cls add(Cls cls){
         return classesRepository.save(cls);
     }
 
-    public Cls editClass(Cls cls){return  classesRepository.save(cls);}
+    public Cls edit(Cls cls){return  classesRepository.save(cls);}
 
-    public void deleteClass(Integer id){classesRepository.deleteById(id);}
+    public void delete(Integer id){classesRepository.deleteById(id);}
 
 }

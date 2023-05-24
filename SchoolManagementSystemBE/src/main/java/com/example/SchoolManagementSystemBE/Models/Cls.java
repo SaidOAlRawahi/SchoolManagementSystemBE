@@ -5,8 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Setter
 @Getter
@@ -19,6 +19,7 @@ public class Cls {
 
     String name;
 
-    @OneToMany(mappedBy = "cls")
-    Set<Course> courses = new HashSet<Course>();
+    @OneToMany
+    @JoinColumn(name = "class_id", referencedColumnName = "id")
+    List<Course> courses = new ArrayList<>();
 }

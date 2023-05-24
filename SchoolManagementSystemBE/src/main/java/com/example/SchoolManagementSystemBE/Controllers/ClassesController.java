@@ -24,19 +24,20 @@ public class ClassesController {
     }
 
     @PostMapping
-    public Cls addClass(@RequestBody Cls cls) {
-        Cls addedClass = classesService.addClass(cls);
+    public Cls add(@RequestBody Cls cls) {
+        Cls addedClass = classesService.add(cls);
         return addedClass;
     }
 
     @PutMapping
-    public String editClass(@RequestBody Cls cls) {
-        Cls editedClass = classesService.addClass(cls);
+    public String edit(@RequestBody Cls cls) {
+        Cls editedClass = classesService.add(cls);
         return "class with id "+ cls.getId()+ "is been edited";
     }
-    @DeleteMapping("/delete{id}")
-    public String deleteClass(@PathVariable Integer id){
-        classesService.deleteClass(id);
+
+    @DeleteMapping("/delete={id}")
+    public String delete(@PathVariable Integer id){
+        classesService.delete(id);
         return "class with id " + id + "has been deleted";
     }
 }
