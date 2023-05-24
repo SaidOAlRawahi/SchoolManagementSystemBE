@@ -20,7 +20,7 @@ public class Course {
     String name;
 
     @ManyToOne
-    Class cls;
+    Cls cls;
 
     @OneToOne
     Teacher teacher;
