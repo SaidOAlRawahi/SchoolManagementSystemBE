@@ -15,10 +15,14 @@ public class ClassesService {
     public List<Cls> getAll(){
         return classesRepository.findAll();
     }
+    public Cls getById(Integer id){return classesRepository.findById(id).get();}
 
     public Cls addClass(Cls cls){
         return classesRepository.save(cls);
     }
 
+    public Cls editClass(Cls cls){return  classesRepository.save(cls);}
+
+    public void deleteClass(Integer id){classesRepository.deleteById(id);}
 
 }
